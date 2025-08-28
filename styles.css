@@ -100,6 +100,7 @@ body {
 
 .stat-card i {
     color: #374151;
+    font-size: 40px;
 }
 
 .stat-card:hover {

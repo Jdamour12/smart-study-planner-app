@@ -7,7 +7,7 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    background-color: #fefefe;
+    background-color: white;
     color: #1a1a1a;
     line-height: 1.6;
 }
@@ -20,13 +20,14 @@ body {
 
 /* Header */
 .header {
-    background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+    background: #FFF8EA;
     color: white;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(234, 88, 12, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
+    border: 2px solid hsla(0, 0%, 43%, 0.253);
 }
 
 .header-content {
@@ -41,11 +42,32 @@ body {
 .header-title {
     font-size: 1.5rem;
     font-weight: 700;
+    color: black;
+}
+
+.header-title:hover {
+    cursor: pointer;
 }
 
 .header-actions {
     display: flex;
     gap: 0.75rem;
+}
+
+.header-content .header-title span i{
+    background-color: #ea580c;
+    width: 50px;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 7px;
+    color: white;
+    border-radius: 10px;
+}
+
+.header-content .header-title span i:hover{
+    cursor: pointer;
 }
 
 /* Main Content */
@@ -68,12 +90,16 @@ body {
 
 .stat-card {
     background: #FFF8EA;
-    border: 1px solid #f3f4f6;
+    border: 2px solid hsla(0, 0%, 43%, 0.253);
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card i{
+    color: #374151;
 }
 
 .stat-card:hover {
@@ -101,6 +127,7 @@ body {
     padding: 1.5rem;
     margin-bottom: 2rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 2px solid hsla(0, 0%, 43%, 0.253);
 }
 
 .search-container {
@@ -144,6 +171,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 2px solid hsla(0, 0%, 43%, 0.253);
 }   
 
 .tasks-list {
@@ -313,6 +341,7 @@ body {
 .btn-secondary {
     background-color: #f3f4f6;
     color: #374151;
+    border: 1px solid #878585;
 }   
 
 .btn-secondary:hover {
@@ -542,6 +571,9 @@ body {
 
 /*   Responsive */
 @media (max-width: 768px) {
+    .main {
+        margin-top: 65px;
+    }
     .header-content {
         flex-direction: column;
         gap: 1rem;

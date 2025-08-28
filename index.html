@@ -6,13 +6,14 @@
     <title>Smart Study Planner</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ee3438cc32.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="app">
         <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <h1 class="header-title">Smart Study Planner</h1>
+                <h1 class="header-title"><span><i class="fa-solid fa-book-open"></i></span>Smart Study Planner</h1>
                 <div class="header-actions">
                     <button class="btn btn-secondary" onclick="toggleDataDialog()">
                         <span>⚙️</span> Settings
@@ -29,18 +30,22 @@
             <!-- Stats Cards -->
             <div class="stats-grid">
                 <div class="stat-card">
+                    <i class="fa-solid fa-bullseye"></i>
                     <div class="stat-number" id="totalTasks">0</div>
                     <div class="stat-label">Total Tasks</div>
                 </div>
                 <div class="stat-card">
+                    <i class="fa-solid fa-check-to-slot"></i>
                     <div class="stat-number" id="completedTasks">0</div>
                     <div class="stat-label">Completed</div>
                 </div>
                 <div class="stat-card">
+                    <i class="fa-solid fa-spinner"></i>
                     <div class="stat-number" id="inProgressTasks">0</div>
                     <div class="stat-label">In Progress</div>
                 </div>
                 <div class="stat-card">
+                    <i class="fa-regular fa-calendar"></i>
                     <div class="stat-number" id="overdueTasks">0</div>
                     <div class="stat-label">Overdue</div>
                 </div>

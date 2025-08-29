@@ -344,6 +344,7 @@ function renderTasks() {
                     </select>
                 </div>
             </div>
+            <hr class="note-divider" />
         `
     })
     .join("")
@@ -351,7 +352,7 @@ function renderTasks() {
 
 function renderNotes() {
   const notesList = document.getElementById("notesList")
-  const taskNotes = getTaskNotes(currentTaskId)
+  let taskNotes = getTaskNotes(currentTaskId)
 
   if (taskNotes.length === 0) {
     notesList.innerHTML = '<div class="empty-state"><p>No notes yet. Add your first note above!</p></div>'
@@ -361,25 +362,25 @@ function renderNotes() {
   notesList.innerHTML = taskNotes
     .map(
       (note) => `
-        <div class="note-card">
-            <div class="note-header">
-                <h4 class="note-title">${escapeHtml(note.title)}</h4>
-                <div>
-                    <span class="note-date">${formatDate(note.createdAt.split("T")[0])}</span>
-                    <button class="btn btn-small btn-danger" onclick="handleDeleteNote('${note.id}')" style="margin-left: 0.5rem;">Delete</button>
-                </div>
-            </div>
-            <div class="note-content">${escapeHtml(note.content)}</div>
-            ${
-              note.tags.length > 0
-                ? `
-                <div class="note-tags">
-                    ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(tag)}</span>`).join("")}
-                </div>
-            `
-                : ""
-            }
+      <div class="note-card">
+        <div class="note-header">
+          <h4 class="note-title">${escapeHtml(note.title)}</h4>
+          <div>
+            <span class="note-date">${formatDate(note.createdAt.split("T")[0])}</span>
+            <button class="btn btn-small btn-danger" onclick="handleDeleteNote('${note.id}')" style="margin-left: 0.5rem;">Delete</button>
+          </div>
         </div>
+        <div class="note-content">${escapeHtml(note.content)}</div>
+        ${
+          note.tags.length > 0
+          ? `
+          <div class="note-tags">
+            ${note.tags.map((tag) => `<span class="note-tag">${escapeHtml(tag)}</span>`).join("")}
+          </div>
+        `
+          : ""
+        }
+      </div>
     `,
     )
     .join("")
